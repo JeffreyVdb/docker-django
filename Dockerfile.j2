@@ -18,6 +18,9 @@ ENV PYENV_VERSION={{ pythonversion }} \
 ########################
 # Configure build args #
 ########################
+ARG UID=1000
+ARG GID=1000
+ARG USERNAME=django
 ARG PORT=8000
 ARG UWSGI_PORT=3031
 ARG STATUS_PORT=9191
