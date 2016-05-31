@@ -17,10 +17,10 @@ pythonversion: $(PYTHON_VERSION)\
 		-v $(ROOTDIR)/Dockerfile.j2:/data/Dockerfile.j2 \
 		-v $(ROOTDIR)/data$(PYTHON_VERSION).yml:/data/data.yml \
 		vikingco/jinja2cli Dockerfile.j2 data.yml > Dockerfile
-	docker build -t vikingco/django:$(PYTHON_VERSION) .
+	docker build -t jeffreyvdb/django:$(PYTHON_VERSION) .
 	@rm data$(PYTHON_VERSION).yml
 	@rm Dockerfile
 
 push-%: PYTHON_VERSION=$(python_version)
 push-%:
-	docker push vikingco/django:$(PYTHON_VERSION)
+	docker push jeffreyvdb/django:$(PYTHON_VERSION)
